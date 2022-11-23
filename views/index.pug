@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body class="bg-dark bg-gradient text-white" style="min-height: 100vh">
+    .container
+        .row 
+            .col 
+                h1 Agenda de contactos 
+    .container
+        .row.d-flex.justify-content-center
+            .col-6 
+                form.shadow-lg.p-3.mb-5.bg-secondary.bg-gradient.rounded(action="/create" method="POST")
+                    fieldset
+                        legend Datos del contacto
+                        .mb-3
+                        label.form-label(for="nombre") Nombre
+                        input.form-control#nombre(type="text" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre completo")
+                        .form-text.text-light#nombreHelp Por favor ingresa un nombre completo.
+                        .mb-3
+                        label.form-label(for="email") Correo Electronico
+                        input.form-control#email(type="email" aria-describedby="emailHelp" name="email" placeholder="Email recurrente")
+                        .form-text.text-light#emailHelp Por favor ingresa un email valido.
+                    .mb-3
+                        label.form-label(for="telefono") Telefono
+                        input.form-control#telefono(type="text" aria-describedby="telefonoHelp" name="telefono" placeholder="Telefono a 10 digitos")
+                        .form-text.text-light#telefonoHelp Por favor ingresa un telefono valido.
+                    .d-flex.justify-content-end
+                        button.btn.btn-primary(type="submit") Guardar contacto
+    .container 
+        .row 
+            .col
+                table.table.table-dark.table-striped.table-hover.table-bordered.table-sm.table-responsive-sm
+                    thead
+                        tr
+                            th(scope="col") Nombre
+                            th(scope="col") Email
+                            th(scope="col") Telefono
+                            th(scope="col") Acciones
+                    tbody
+                    if ok
+                        each contacto in contactos
+                            tr
+                                td.d-none=contacto._id
+                                td=contacto.nombre
+                                td=contacto.email
+                                td=contacto.telefono
+                                td 
+                                    button.btn.btn-info#btnEditar Actualizar
+                                    a.button.btn.btn-danger(href= `/delete/${contacto._id}`) Eliminar
+                    else 
+                        tr
+                            td Ingrese un contacto primero 
+                            td Ingrese un contacto primero
+                            td Ingrese un contacto primero
+                            td   
+    include ../include/modal.pug                      
+        // tabla
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    script(src="/static/js/modal.js")
+    </body>
+</html>
+    
+    

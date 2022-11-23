@@ -1,0 +1,23 @@
+#modalContacto.modal.fade(tabindex="-1" aria-labelledby="modalContacto" aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header.bg-dark.bg-gradient.text-white
+        h5(class="modal-title" id="exampleModalLabel") Editar Contacto
+        button(type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close")
+      .modal-body.bg-secondary.bg-gradient.text-light
+        form(action="/update" method="POST")
+          input(name="edit_id" id="edit_id" type="text" hidden)
+          .mb-3
+            label(for="nombre" class="form-label") Nombre
+            input(type="text" class="form-control" id="edit_nombre" name="nombre" aria-describedby="nombreHelp")
+            #nombreHelp.form-text.text-warning Ingresa el nuevo nombre...
+          .mb-3
+            label(for="email" class="form-label") Email
+            input(type="email" class="form-control" id="edit_email" name="email" aria-describedby="emailHelp")
+            #emailHelp.form-text.text-warning Ingresa el nuevo email...
+          .mb-3
+            label(for="telefono" class="form-label") Telefono
+            input(type="tel" class="form-control" id="edit_telefono" name="telefono" aria-describedby="telefonoHelp")
+            #telefonoHelp.form-text.text-warning Ingresa el nuevo telefono...
+          .d-grid
+            button(type="submit" class="btn btn-primary") Actualizar

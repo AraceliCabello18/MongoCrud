@@ -1,0 +1,18 @@
+10 npm init -y para inicializar proyecto
+20 npm i express dotenv pug mongoose 
+30 crear archivo .env que contenga PORT 
+40 Crear scrips personalizados para facilicitar la ejecucuion del proyecto
+50 crear el punto de inicio de nuestra app
+60 crear carpeta database con archivo config.js
+70 utilizar la conexion en index.js
+80  crear una carpeta llamada views
+90 pulir el layout en index.pug 
+100 crear carpeta node_modules
+110 crear archivo contacto.js dentro de models
+120 refactorizar la ruta   creando routes 
+creando la ruta de ( e eñ archivo ) contactos.js dentro de /routes
+140. crear el controlador dentro de / controllers en el archivo contactos.js
+150. crear la logica de la ruta /
+160. adecuar la vista index.pug para que muestre los datos
+170.
+180.crear la configuracion de lectura de request en index.js
